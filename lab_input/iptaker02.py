@@ -11,10 +11,10 @@ def main():
     # print("You told me the IPv4 address is: " + user_input)
     
     ## print() can be given a series of objects separated by a comma
-    print("You told me the IPv4 address is:", user_input)
+    #print("You told me the IPv4 address is:", user_input)
 
-    vender = input('who is your vendor:>>>') 
-    print('Your vendor is:', vender) 
+    vender = input('who is your vendor>>>') 
+    print('You told me your IPv4 address is:' + user_input, 'Your vendor is' + vender) 
 
 
 main()
