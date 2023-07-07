@@ -1,5 +1,5 @@
 #!usr/bin/evn Python 
-
+1 = take 1 shot 
 #This is a simple drinking a game each player selects a number and recieves drinking instruction 
 
 
