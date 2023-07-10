@@ -1,5 +1,6 @@
 #!usr/bin/evn Python 
-List Players[]
+Player list[]
+Order list[] 
 1=='take 1 shot' 
 2=='take 2 shots'
 3=='take 2 shots and give someone else a shot'
