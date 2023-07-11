@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 #!usr/bin/evn Python
 """" This is a simple drinking a game each player selects a number and recieves drinking instruction"""
+=======
+#!usr/bin/python3
+"""The game is a drinking game meant to be played with several people.randomized name selection and drink commands"""
+>>>>>>> c7374aa09a89b3fd9cbd14e3e9a2fac3f1814c13
 Player list[]
-Order list[] 
+Order list[take 1 shot, ] 
 1=='take 1 shot' 
 2=='take 2 shots'
 3=='take 2 shots and give someone else a shot'
@@ -46,6 +51,6 @@ def main():
     # while loop 
     # Pick random player
 
-
-main()
+if __name__ == "__main__":
+    main()
 
