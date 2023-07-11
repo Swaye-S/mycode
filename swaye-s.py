@@ -1,4 +1,5 @@
-#!usr/bin/evn Python 
+#!usr/bin/evn Python
+"""" This is a simple drinking a game each player selects a number and recieves drinking instruction"""
 Player list[]
 Order list[] 
 1=='take 1 shot' 
@@ -8,7 +9,7 @@ Order list[]
 5=='stand on 1 leg and rub your head while taking 1 shot'
 6=='pick someone to take a shot off'
 7=='divy up 5 shots amoung friends'
-#This is a simple drinking a game each player selects a number and recieves drinking instruction
+
 def menu():
     print("=== Game Start Menu ===")
     print("This is only the Begining")
@@ -26,10 +27,10 @@ def menu():
             print('Lets Play a Game!')
     def player():
             while True:
-                p1 =input('Enter Name For Player 1 ' ) 
+                p =input('Enter Name For Player 1 ' ) 
                 choice =input('Would You Like To Add A Player? (y or n) ')
                 if choice.lower() == 'y':
-                    p2 =input('Input New Player ')
+                    p2 =input('Input New Player >>> ')
                 elif choice.lower() == 'n':
 
             # put game logic here 
@@ -40,6 +41,7 @@ def main():
     # show menu
     menu()
     # add players 
+    player()
 
     # while loop 
     # Pick random player
@@ -47,8 +49,3 @@ def main():
 
 main()
 
-
-number = int(input('Enter between 1 and 10: '))
-#if number is out of scope 1-10 print take 5 shots
-if number < 1 or number > 10:
-    print('Take 5 shots... Got em!')
