@@ -1,6 +1,9 @@
 #!usr/bin/python3
 """The game is a drinking game meant to be played with 4 or more people randomized name selection and drink commands"""
+import random
+# List of all the players names 
 player_list=[]
+# List of all the drinking commands 
 instuction_list=['take 1 shot',
                  'take 2 shots',
                  'phone a friend to take 2 shots with you',
@@ -16,7 +19,7 @@ instuction_list=['take 1 shot',
                  'tell an embarrassing true story or take 2 shots'
                  'choose one other player to sing a song with you\, if the rest of the players like your performance no shot if they don\'t then 1 shot for each of you singing',
                  'What is the most broke thing you\'ve ever done? or take a shot',] 
-
+# Start of menu and first steps 
 def menu():
     print("=== Game Start Menu ===")
     print("This is only the Begining")
@@ -32,7 +35,7 @@ def menu():
         
     elif choice.lower() == 'y':
         print('Lets Play a Game!')
-            
+ # Collecting players names for player list            
 def player():
     while True:
         name =input('Input player name >>> ')
@@ -47,7 +50,7 @@ def player():
     print(player_list)
         
 
-            # put game logic here 
+ # Game logic here 
 def game():
     while True:
         challenge = random.choice(instruction_list)
