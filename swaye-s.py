@@ -1,10 +1,11 @@
 #!usr/bin/python3
 """The game is a drinking game meant to be played with 4 or more people randomized name selection and drink commands"""
 import random
+import loader
 # List of all the players names 
 player_list=[]
 # List of all the drinking commands 
-instuction_list=['take 1 shot',
+instruction_list=['take 1 shot',
                  'take 2 shots',
                  'phone a friend to take 2 shots with you',
                  'take a shot off someone\, of the most sober player\'s choosing',
@@ -41,24 +42,34 @@ def player():
         name =input('Input player name >>> ')
         player_list.append(name)
         followup =input('Add new player? y/n ')
-        
-        
         if followup.lower() == 'n':
             break
         else:
             continue
     print(player_list)
         
-
  # Game logic here 
 def game():
     while True:
         challenge = random.choice(instruction_list)
+        player = random.choice(player_list)
+        
+        with loader("Loading with context manager..."):
+            for i in range(10):
+                sleep(0.25)
+        
+        loader = loader("Loading with object...", "That was fast!", 0.05).start()
+        for i in range(10):
+            sleep(0.25)
+            loader.stop()
+        print(player)
         print(challenge)
-        Pimp =input() 
+        print('press *c* to continue\, or press *esc*')
+        pimp =input() 
 
-        if  Pimp.lower('Press *c* to continue') == 'c':
-            print(challenge)
+        if pimp.lower() == 'c':
+            continue 
+            
 
         else:
             break
@@ -71,7 +82,10 @@ def main():
     # start game loop
     game()
     # while loop 
+    # load annimation
+    loader()
     # Pick random player
+
 
 if __name__ == "__main__":
     main()
