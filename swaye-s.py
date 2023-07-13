@@ -1,7 +1,7 @@
 #!usr/bin/python3
 """The game is a drinking game meant to be played with 4 or more people randomized name selection and drink commands"""
 import random
-import loader
+import myloader
 # List of all the players names 
 player_list=[]
 # List of all the drinking commands 
@@ -55,11 +55,11 @@ def game():
         challenge = random.choice(instruction_list)
         player = random.choice(player_list)
         
-        with loader("Loading with context manager..."):
+        with myloader.Loader("Loading with context manager..."):
             for i in range(10):
                 sleep(0.25)
         
-        loader = loader("Loading with object...", "That was fast!", 0.05).start()
+        loader = myloader.Loader("Loading with object...", "That was fast!", 0.05).start()
         for i in range(10):
             sleep(0.25)
             loader.stop()
@@ -84,7 +84,7 @@ def main():
     game()
     # while loop 
     # load annimation
-    loader()
+  
     # Pick random player
 
 
