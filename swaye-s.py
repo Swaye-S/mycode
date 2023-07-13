@@ -22,9 +22,9 @@ instruction_list=['take 1 shot',
                  'What is the most broke thing you\'ve ever done? or take a shot',] 
 # Start of menu and first steps 
 def menu():
-    print("=== Game Start Menu ===")
+    print("==== Game Start Menu ====")
     print("This is only the Begining")
-    print("************************")
+    print("*************************")
     #Start an infinite loop 
 
     #Ask user for a selection
@@ -50,6 +50,7 @@ def player():
         
  # Game logic here 
 def game():
+    """ called at run time """
     while True:
         challenge = random.choice(instruction_list)
         player = random.choice(player_list)
