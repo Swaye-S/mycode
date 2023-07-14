@@ -3,6 +3,7 @@
 import random
 import myloader
 from myloader import sleep
+from myloader import Loader
 # List of all the players names 
 player_list=[]
 # List of all the drinking commands 
@@ -56,19 +57,19 @@ def game():
         challenge = random.choice(instruction_list)
         player =random.choice(player_list)
         
-        with myloader.Loader("Selecting random player" '\n'):
+        with myloader.Loader("Selecting random player" ):
             loader = myloader.Loader
             for i in range(15):
                 sleep(0.50)
-                
+            loader.stop(loader)
             print(player)
                 
-            myloader.Loader("Loading with object...").start
+            myloader.Loader("Loading with object..." ).start()
             for i in range(10):
                 sleep(0.25)
-                loader.stop
+            loader.stop(loader)
             print(challenge)
-            sleep(0.45)
+        sleep(0.45)
         print('press *c* to continue, or press *esc*')
         pimp =input() 
 
