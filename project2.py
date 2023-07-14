@@ -1,6 +1,7 @@
 import random
 from loaders import SpinningLoader
 import crayons
+from colr import color
 player_list = []
 instruction_list = ['take 1 shot',
                    'take 2 shots',
@@ -21,7 +22,7 @@ instruction_list = ['take 1 shot',
 def menu():
     print(crayons.green("==== Game Start Menu ===="))
     print(crayons.red("This is only the Beginning"))
-    print(crayons.black("*************************"))
+    print(crayons.black("**************************"))
     #Ask user for a selection
     while True:
         choice = input(crayons.magenta("Would you like to play? (y/n) "))
@@ -33,7 +34,7 @@ def menu():
             print(crayons.red('Let\'s Play a Game!'))
             break
         else:
-            print('You can do better than that')
+            print(crayons.blue('You can do better than that'))
             continue
 
 def add_players():
@@ -43,6 +44,8 @@ def add_players():
         follow_up = input(crayons.yellow('Add new player? (y/n) '))
         if follow_up.lower() == 'n':
             break
+        elif follow_up.lower() == 'y':
+            continue
     print(player_list)
 
 def game():
@@ -52,11 +55,9 @@ def game():
         random_player = random.choice(player_list)
         fixed_loader = SpinningLoader(text='Players Get Ready To Blackout', style='underline', colour='blue', size='large', speed=.06, duration=20)
         fixed_loader.run() # Pauses program execution and runs loader for 10s
-        print(crayons.purple(random_player))
+        print(crayons.magenta(random_player))
         fixed_loader.run()
-        print(crayons.orange(challenge))
-
-
+        print(crayons.red(challenge))
         print(crayons.green('Press *c* to continue, or press *esc*'))
         choice = input()
         if choice.lower() == 'c':
