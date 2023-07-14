@@ -1,24 +1,25 @@
-#!usr/bin/python3
+#!usr/bin/evn python3
 """The game is a drinking game meant to be played with 4 or more people randomized name selection and drink commands"""
 import random
 import myloader
+from myloader import sleep
 # List of all the players names 
 player_list=[]
 # List of all the drinking commands 
 instruction_list=['take 1 shot',
                  'take 2 shots',
                  'phone a friend to take 2 shots with you',
-                 'take a shot off someone\, of the most sober player\'s choosing',
-                 'take 3 shots or do a dance\, *twerking counts*',
+                 'take a shot off someone, of the most sober player\'s choosing',
+                 'take 3 shots or do a dance, *twerking counts*',
                  'divy up 5 shots amoung friends',
                  'stand on 1 leg and rub your head while taking 1 shot',
                  'tell everyone one of your secrets they do not know or take 2 1/2 shots',
                  'take 2 shots and give someone else a shot',
-                 'sing a song\, choosen by the most inebriated player or everyone takes a shot but you',
+                 'sing a song, choosen by the most inebriated player or everyone takes a shot but you',
                  'pick 3 players and they take 1 shot each',
                  'the previous player chooses to either take a or every other player takes 2 shots',
                  'tell an embarrassing true story or take 2 shots'
-                 'choose one other player to sing a song with you\, if the rest of the players like your performance no shot if they don\'t then 1 shot for each of you singing',
+                 'choose one other player to sing a song with you, if the rest of the players like your performance no shot if they don\'t then 1 shot for each of you singing',
                  'What is the most broke thing you\'ve ever done? or take a shot',] 
 # Start of menu and first steps 
 def menu():
@@ -28,7 +29,7 @@ def menu():
     #Start an infinite loop 
 
     #Ask user for a selection
-    choice =input("would you like to play? (y or n)")
+    choice =input("would you like to play? (y/n) ")
 
     # check if they entered y or n
     if choice.lower() == 'n':
@@ -51,29 +52,33 @@ def player():
  # Game logic here 
 def game():
     """ called at run time """
-    while True:
+    while True:   
         challenge = random.choice(instruction_list)
-        player = random.choice(player_list)
+        player =random.choice(player_list)
         
-        with myloader.Loader("Loading with context manager..."):
+        with myloader.Loader("Selecting random player" '\n'):
+            loader = myloader.Loader
+            for i in range(15):
+                sleep(0.50)
+                
+            print(player)
+                
+            myloader.Loader("Loading with object...").start
             for i in range(10):
                 sleep(0.25)
-        
-        loader = myloader.Loader("Loading with object...", "That was fast!", 0.05).start()
-        for i in range(10):
-            sleep(0.25)
-            loader.stop()
-        print(player)
-        print(challenge)
-        print('press *c* to continue\, or press *esc*')
+                loader.stop
+            print(challenge)
+            sleep(0.45)
+        print('press *c* to continue, or press *esc*')
         pimp =input() 
 
         if pimp.lower() == 'c':
-            continue 
-            
-
+            """fire"""
+            continue
         else:
             break
+            
+
         
 def main():
     # show menu
