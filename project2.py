@@ -1,13 +1,16 @@
+#!usr/bin/env python3
+'''Author Kwintin Cox aka Swaye: The game is a simple drinking game.'''
+# Imported Modules 
 import random
 from loaders import SpinningLoader
 import crayons
-from colr import color
+#nfrom colr import color
 player_list = []
 instruction_list = ['take 1 shot',
                    'take 2 shots',
                    'phone a friend to take 2 shots with you',
                    'take a shot off someone, of the most sober player\'s choosing',
-                   'take 3 shots or do a dance, *twerking counts*',
+                   'take 3 shots or do a dance.',
                    'divy up 5 shots among friends',
                    'stand on 1 leg and rub your head while taking 1 shot',
                    'tell everyone 1 of your secrets they do not know or take 2 1/2 shots',
@@ -18,15 +21,15 @@ instruction_list = ['take 1 shot',
                    'tell an embarrassing true story or take 2 shots',
                    'choose one other player to sing a song with you, if the rest of the players like your performance take no shot if they don\'t then 1 shot for each singer',
                    'What is the most broke thing you\'ve ever done? or take 1 shot',]
-# Start of menu and first steps 
+# Start of menu display 
 def menu():
     print(crayons.green("==== Game Start Menu ===="))
     print(crayons.red("This is only the Beginning"))
     print(crayons.black("**************************"))
-    #Ask user for a selection
+# Ask user for a selection
     while True:
         choice = input(crayons.magenta("Would you like to play? (y/n) "))
-        # check if they entered y or n
+# Check if they entered y or n
         if choice.lower() == 'n':
             print("See You Soon!")
             exit()
@@ -36,7 +39,7 @@ def menu():
         else:
             print(crayons.blue('You can do better than that'))
             continue
-
+# Adding players 
 def add_players():
     while True:
         name = input(crayons.blue('Input player name >>> '))
@@ -47,9 +50,10 @@ def add_players():
         elif follow_up.lower() == 'y':
             continue
     print(player_list)
-
+# Game logic
 def game():
     """ called at run time """
+# Randomize selection of name and drink instructions    
     while True:
         challenge = random.choice(instruction_list)
         random_player = random.choice(player_list)
@@ -64,11 +68,10 @@ def game():
             continue
         else:
             break
-
+# Project structor and execution
 def main():
     menu()
     add_players()
     game()
-
 if __name__ == "__main__":
     main()
